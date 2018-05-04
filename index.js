@@ -31,7 +31,7 @@ function createNodeContainer(node) {
 }
 
 function kata1() {
-    const gotCitiesArray = [gotCitiesCSV.split(",")]
+    const gotCitiesArray = gotCitiesCSV.split(",")
     return JSON.stringify(gotCitiesArray)
 }
 
@@ -39,7 +39,7 @@ createTextContainer("1. Display an array from the cities in gotCitiesCSV")
 createAnswerTextContainer(kata1())
 
 function kata2() {
-    const bestThingArray = [bestThing.split(" ")]
+    const bestThingArray = bestThing.split(" ")
     return JSON.stringify(bestThingArray)
 }
 
@@ -63,7 +63,7 @@ createTextContainer("4. Display a CSV (comma-separated) string from the lotrCiti
 createAnswerTextContainer(kata4())
 
 function kata5() {
-    let lotrCitiesFirstFive = [lotrCitiesArray.slice(0, 5)]
+    let lotrCitiesFirstFive = lotrCitiesArray.slice(0, 5)
     return JSON.stringify(lotrCitiesFirstFive)
 }
 
@@ -71,7 +71,7 @@ createTextContainer("5. Display the first 5 cities in lotrCitiesArray")
 createAnswerTextContainer(kata5())
 
 function kata6() {
-    let lotrCitiesLastFive = [lotrCitiesArray.slice(3)]
+    let lotrCitiesLastFive = lotrCitiesArray.slice(3)
     return JSON.stringify(lotrCitiesLastFive)
 }
 
@@ -79,7 +79,7 @@ createTextContainer("6. Display the last 5 cities in lotrCitiesArray")
 createAnswerTextContainer(kata6())
 
 function kata7() {
-    let lotrCities3To5 = [lotrCitiesArray.slice(2, 5)]
+    let lotrCities3To5 = lotrCitiesArray.slice(2, 5)
     return JSON.stringify(lotrCities3To5)
 }
 
@@ -173,11 +173,20 @@ createTextContainer("18. Find and display the index of the last word in bestThin
 createAnswerTextContainer(kata18())
 
 function kata19() {
-    const gotCitiesArray = [gotCitiesCSV.split(",")]
+    const gotCitiesArray = gotCitiesCSV.split(",")
     let gotCitiesDoubleVowels = []
     for(let i = 0; i <= gotCitiesArray.length; i++) {
-        if(gotCitiesArray[i].includes("ee")) {
-            gotCitiesDoubleVowels.push(gotCitiesArray[i])
+        let gotCitiesIteration = gotCitiesArray[i]
+        if(String(gotCitiesIteration).includes("aa") === true) {
+            gotCitiesDoubleVowels.push(gotCitiesIteration)
+        } else if(String(gotCitiesIteration).includes("ee") === true) {
+            gotCitiesDoubleVowels.push(gotCitiesIteration)
+        } else if(String(gotCitiesIteration).includes("ii") === true) {
+            gotCitiesDoubleVowels.push(gotCitiesIteration)
+        } else if(String(gotCitiesIteration).includes("oo") === true) {
+            gotCitiesDoubleVowels.push(gotCitiesIteration)
+        } else if(String(gotCitiesIteration).includes("uu") === true) {
+            gotCitiesDoubleVowels.push(gotCitiesIteration)
         }
     }
     return JSON.stringify(gotCitiesDoubleVowels)
@@ -185,3 +194,142 @@ function kata19() {
 
 createTextContainer("19. Find and display all cities from gotCitiesCSV that use double vowels ('aa','ee', etc.)")
 createAnswerTextContainer(kata19())
+
+function kata20() {
+    let lotrCitiesEndsWith = []
+    for(let i = 0; i <= lotrCitiesArray.length; i++) {
+        if(String(lotrCitiesArray[i]).endsWith("or") === true) {
+            lotrCitiesEndsWith.push(lotrCitiesArray[i])
+        }
+    }
+    return JSON.stringify(lotrCitiesEndsWith)
+}
+
+createTextContainer("20. Find and display all cities from lotrCitiesArray that end with 'or'")
+createAnswerTextContainer(kata20())
+
+function kata21() {
+    const bestThingArray = bestThing.split(" ")
+    let bestThingB = []
+    for(let i = 0; i <= bestThingArray.length; i++) {
+        if(String(bestThingArray[i]).startsWith("b") === true) {
+            bestThingB.push(bestThingArray[i])
+        }
+    }
+    return JSON.stringify(bestThingB)
+}
+
+createTextContainer("21. Find and display all the words in bestThing that start with a 'b'")
+createAnswerTextContainer(kata21())
+
+function kata22() {
+    if(lotrCitiesArray.includes("Mirkwood") === true) {
+        var result = "Yes"
+    } else {
+        var result = "No"
+    }
+    return result
+}
+
+createTextContainer("22. Display 'Yes' or 'No' if lotrCitiesArray includes 'Mirkwood'")
+createAnswerTextContainer(kata22())
+
+function kata23() {
+    if(lotrCitiesArray.includes("Hollywood") === true) {
+        var result = "Yes"
+    } else {
+        var result = "No"
+    }
+    return result
+}
+
+createTextContainer("23. Display 'Yes' or 'No' if lotrCitiesArray includes 'Hollywood'")
+createAnswerTextContainer(kata23())
+
+function kata24() {
+    const Mirkwood = lotrCitiesArray.indexOf("Mirkwood")
+    return Mirkwood
+}
+
+createTextContainer("24. Display the index of 'Mirkwood' in lotrCitiesArray")
+createAnswerTextContainer(kata24())
+
+function kata25() {
+    let lotrCitiesTwoWord = []
+    for(let i = 0; i <= lotrCitiesArray.length; i++) {
+        if(String(lotrCitiesArray[i]).includes(" ") === true) {
+            lotrCitiesTwoWord.push(lotrCitiesArray[i])
+        }
+    }
+    return lotrCitiesTwoWord
+}
+
+createTextContainer("25. Find and display the first city in lotrCitiesArray that has more than one word")
+createAnswerTextContainer(kata25())
+
+function kata26() {
+    const lotrCitiesReversed = lotrCitiesArray.reverse()
+    return JSON.stringify(lotrCitiesReversed)
+}
+
+createTextContainer("26. Reverse the order in lotrCitiesArray")
+createAnswerTextContainer(kata26())
+
+function kata27() {
+    const lotrCitiesAlpha = lotrCitiesArray.sort()
+    return JSON.stringify(lotrCitiesAlpha)
+}
+
+createTextContainer("27. Sort lotrCitiesArray alphabetically")
+createAnswerTextContainer(kata27())
+
+function kata28() {
+    function compare(a, b) {
+        aCity = a.slice(a.lastIndexOf(" "));
+        bCity = b.slice(b.lastIndexOf(" "));
+        if (aCity === bCity) {
+          return 0;
+        } else if (aCity < bCity) {
+          return 1;
+        } else {
+          return -1;
+        }
+    }
+    lotrCitiesArray.sort(compare)
+    return JSON.stringify(lotrCitiesArray)
+}
+
+createTextContainer("28. Sort lotrCitiesArray by the number of characters in each city (i.e., shortest city names go first)")
+createAnswerTextContainer(kata28())
+
+function kata29() {
+    lotrCitiesArray.pop()
+    return JSON.stringify(lotrCitiesArray)
+}
+
+createTextContainer("29. Using pop, remove the last city from lotrCitiesArray")
+createAnswerTextContainer(kata29())
+
+function kata30() {
+    lotrCitiesArray.push("Deadest Marshes")
+    return JSON.stringify(lotrCitiesArray)
+}
+
+createTextContainer("30. Using push, add back the city from lotrCitiesArray that was removed in #29 to the back of the array")
+createAnswerTextContainer(kata30())
+
+function kata31() {
+    lotrCitiesArray.shift()
+    return JSON.stringify(lotrCitiesArray)
+}
+
+createTextContainer("31. Using shift, remove the first city from lotrCitiesArray")
+createAnswerTextContainer(kata31())
+
+function kata32() {
+    lotrCitiesArray.unshift("Gondor")
+    return JSON.stringify(lotrCitiesArray)
+}
+
+createTextContainer("32. Using unshift, add back the city from lotrCitiesArray that was removed in #31 to the front of the array")
+createAnswerTextContainer(kata32())
